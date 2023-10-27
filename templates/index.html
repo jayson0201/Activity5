@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+
+</head>
+<body style="background: #f0f0f0; text-align: center; margin: 0; padding: 0;">
+    <div class="container" style="background-color: #fff; border-radius: 5px; max-width: 850px; margin: 0 auto;
+            padding: 20px;">
+        <h1>Prediction of Profits</h1>
+        <p>Example inputs: R&D Spend: (165349.20, 120542.52, 61136.38), Administration Spend: (136897.20, 148718.95, 152701.92), Marketing Spend: (471784.10, 311613.29, 88218.23	)</p>
+        <form method="POST" action="/predict" >
+            <label for="rd_spend" style="display: block; margin-bottom: 10px; font-weight: bold">R&D Spend:</label>
+            <input type="number" name="rd_spend" id="rd_spend" step="0.01" required style=""><br><br>
+            <label for="admin_spend" style="display: block; margin-bottom: 10px; font-weight: bold">Administration Spend:</label>
+            <input type="number" name="admin_spend" id="admin_spend" step="0.01" required><br><br>
+            <label for="marketing_spend" style="display: block; margin-bottom: 10px; font-weight: bold">Marketing Spend:</label>
+            <input type="number" name="marketing_spend" id="marketing_spend" step="0.01" required><br><br>
+            <input type="submit" value="Predict">
+        </form>
+        <br>
+        <br>
+        <h4 style="margin-top: 20px; color: #007bff;">{{ prediction }}</h4>
+    </div>
+</body>
+</html>
